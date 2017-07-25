@@ -6,7 +6,9 @@
     can add one's products to our database. Each product in the database has a name, 
     price, and current stock quantity.
    
-   Inventory, Manager, Products, sell, manage, data, table
+   ##
+   
+    Inventory, Manager, Products, sell, manage, data, table
 
 ## The Features of the App
 
