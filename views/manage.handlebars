@@ -1,0 +1,90 @@
+<div class="container-fluid" id="manage-body">
+	{{!-- Navbar --}}
+	<span id="manage-home-logo" class="pull-left fa fa-folder-open-o"></span>
+	<a href="#" id="logOutBtn" class="pull-right nav-item">Log Out</a>
+	<a href="/user/{{currentUser}}/service" class="pull-right nav-item">Service</a>
+	<a href="/user/{{currentUser}}" class="pull-right nav-item">Manager<div class="active animated flash"></div></a>
+	{{!-- End go Navbar --}}
+	{{!-- Table --}}
+	<table class="table table-striped table-hover">
+		{{!-- Table head --}}
+		<thead>
+			<tr class="bg-table-head">
+				<th>Add More Stock</th>
+				<th>Product Name</th>
+				<th>Stock Quantity</th>
+				<th>Price</th>
+				<th>Remove Product</th>
+			</tr>
+		</thead>
+		{{!-- End of Table head --}}
+		{{!-- Table Body --}}
+		<tbody>
+			{{!-- #each creates a table row for each item in products --}}
+			{{#each products}}
+			<tr>
+				<td>
+					{{!-- Adds more stock to specific product --}}
+					<form action="/user/{{this.currentUser}}/product/{{this.name}}?_method=PUT" method="POST">
+						<input type="hidden" name="productToAdd" value="{{this.name}}">
+						<input type="hidden" name="userIdToAdd" value='{{this.UserId}}'>
+						<input type="hidden" name="currentAmount" value="{{this.quantity}}">
+						<div class="form-group">
+							<div class="input-group">
+								<input type="text" class="form-control" name="amountToAdd" value="0" id="addStockInput">
+								<span class="input-group-btn">
+									<button type="submit" class="btn btn-success" type="button">Add</button>
+								</span>
+							</div>
+						</div>
+					</form>
+				</td>
+				{{!-- this checks if the quantity of the product is under 5 --}}
+				{{#compare this.quantity '<' 5}}
+				{{!-- if the product is low on stock --}}
+				{{!-- then display them red with an animation --}}
+				<td class="animated shake low-inventory">{{this.name}}</td>
+				<td class="animated shake low-inventory">{{this.quantity}}</td>
+				{{else}}
+				{{!-- if the product is not low on stock --}}
+				{{!-- then display as normal --}}
+				<td>{{this.name}}</td>
+				<td>{{this.quantity}}</td>
+				{{/compare}}
+				{{!-- Price of Product --}}
+				<td>$ {{this.price}}</td>
+				<td>
+					{{!-- Removes product from the table --}}
+					<button user='{{this.currentUser}}' product='{{this.id}}' class="confirm btn btn-danger deleteBtn" type="button">
+    				<span class="fa fa-trash"></span>
+					</button>
+				</td>
+			</tr>	
+			{{/each}}
+		</tbody>
+	</table>
+</div>
+{{!-- Creates a new product to be displayed on table --}}
+<div class="container">
+	<h3 class="text-center">Add New Products</h3>
+	<div class="row">
+		<form action="/user/{{currentUser}}" method="POST">
+			<div class="col-md-3">
+				<label>Product Name:</label>
+				<input class="manage-input" type="text" name="productName">
+			</div>
+			<div class="col-md-3">
+				<label>Current Stock Quantity:</label>
+				<input class="manage-input" type="text" name="quantity">
+			</div>
+			<div class="col-md-3">
+				<label>Product Price:</label>
+				<input class="manage-input" type="text" name="price">
+			</div>
+			<div class="col-md-3">
+				<button id="addProductBtn" type="submit" class="btn btn-success">Add Product</button>
+			</div>	
+		</form>
+	</div>
+</div>
+

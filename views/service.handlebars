@@ -1,0 +1,85 @@
+<div class="container-fluid" id="manage-body">
+	{{!-- Navbar --}}
+	<span id="manage-home-logo" class="pull-left fa fa-folder-open-o"></span>
+	<a href="/user/{{currentUser}}/service" class="pull-right nav-item">Service<div class="active animated flash"></div></a>
+	<a href="/user/{{currentUser}}" class="pull-right nav-item">Manager</a>
+	{{!-- End of Navbar --}}
+	<div>
+		{{!-- Page Header --}}
+		<div class="text-center" id="service-head-bar">
+			<h2>Products For Sale</h2>
+		</div>
+		{{!-- End of Page Header --}}
+
+		{{!-- Service section --}}
+		<div id="service-well" class="well text-center">
+			{{!-- empty p tag just in case a message needs to be displayed --}}
+			<div class="row">
+				<p class="message"></p>
+			</div>
+			{{!-- Service Actions --}}
+			<div class="form-group row">
+				<div class="col-xs-6">
+					{{!-- Products list of current user --}}
+					<label for="product-select" class="control-label">Products List</label>
+					<select class="animated bounceInDown form-control" id="product-select">
+						<option></option>
+						{{!-- shows the name, quantity, and price of current product --}}
+						{{#each products}}
+						<option>{{this.name}} * {{this.quantity}} * ${{this.price}}</option>
+						{{/each}}
+					</select>
+				</div>
+				{{!-- Input field for the amount the user wants to sell --}}
+				<div class="col-xs-6">
+					<label for="amountToSell" class="control-label">Quantity</label>
+					<input type="text" class="animated bounceInDown form-control" id="amountToSell">
+				</div>
+			</div>
+			{{!-- Adds current product and quantity to cart --}}
+			<button class="btn btn-success btn-margin" id="addCart">Add To Cart</button>
+			<input type="hidden" id="currentUser" value="{{currentUser}}">
+			{{!-- Opens the Modal --}}
+			<button id="openModBtn" type="submit" class="btn btn-info btn-margin" data-toggle='modal' data-target='#trans-modal'>Checkout</button>
+		</div>
+		
+		<!-- Modal -->
+		<div id="trans-modal" class="modal fade" role="dialog">
+			<div class="modal-dialog">
+				<!-- Modal content-->
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal">Cancel</button>
+						<h4 class="modal-title">Checkout</h4>
+					</div>
+					<div class="modal-body">
+						{{!-- products in the cart are displayed here --}}
+						<div id="transactionDiv"></div>
+					</div>
+					<div class="modal-footer">
+						<div class="row">
+							{{!-- shows total price of all the products --}}
+							<div class="col-xs-6">
+								<p id="totalPrice-style">Total: $<span id="totalPrice"></span></p>
+							</div>
+							{{!-- Input field for purchasing the product --}}
+							<div class="col-xs-6">
+								<div class="input-group" id="purchase-group">
+									<span class="input-group-addon" id="input-addon">$</span>
+									<input type="text" id="customerMoney" value="0" class="form-control">
+									<span class="input-group-btn">
+										<button id="finalBuy" class="btn btn-success" type="button">Purchase</button>
+									</span>
+								</div>
+							</div>
+						</div>
+						{{!-- shows the change for the customer --}}
+						<div class="row">
+							<div class="col-xs-12" id="change"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

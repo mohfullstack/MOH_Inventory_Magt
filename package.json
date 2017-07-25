@@ -1,0 +1,32 @@
+{
+  "name": "inventory-manager-hospital",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "node server.js",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mohfullstack/Inventory-Manager-Hospital.git"
+  },
+  "author": "Mohammed K",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mohfullstack/Inventory-Manager-Hospital/issues"
+  },
+  "homepage": "https://github.com/mohfullstack/Inventory-Manager-Hospital#readme",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "express": "^4.15.3",
+    "express-handlebars": "^3.0.0",
+    "handlebars-helpers": "^0.8.2",
+    "jquery": "^3.2.1",
+    "jquery-confirm": "^3.2.3",
+    "method-override": "^2.3.9",
+    "myclabs.jquery.confirm": "^2.7.0",
+    "mysql": "^2.13.0",
+    "sequelize": "^3.30.4"
+  }
+}

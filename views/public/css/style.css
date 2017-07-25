@@ -1,0 +1,147 @@
+#manage-body{
+	padding: 0;
+}
+.product-buy-item{
+	list-style-type: none;
+	display: inline;
+	margin: 10px;
+}
+a, a:hover{
+	text-decoration: none;
+	color: inherit;
+}
+.bg-table-head{
+	background-color: #303e4e;
+	color: #fff;
+}
+#login-body{
+	background: #303e4e;
+	padding: 50px 0;
+	height: 1000px;
+}
+#login-top-head{
+	padding: 30px 0px;
+	color: #fff;
+	width: 100%;
+}
+#login-top-title{
+	font-size: 55px;
+	font-family: 'Sanchez', serif;
+}
+#signUp-link{
+	display: block;
+	padding: 15px 0px;
+	font-size: 20px;
+}
+#signUp-link:hover, #login-link:hover{
+	color: #71e096;
+}
+#login-link{
+	font-size: 20px;
+}
+#signUp-body{
+	background: #2c3e50;
+	color: #fff;
+	height: 1000px;
+}
+.manage-input{
+	display: block;
+	width: 100%;
+}
+#addProductBtn{
+	margin: 10px 0px;
+}
+#home-logo{
+	background-color: #18bc9c;
+	padding: 8px 5px 10px 12px;
+	border: 1px solid #18bc9c;
+	border-radius: 50%;
+	-webkit-animation-delay: 0.8s;
+}
+#manage-home-logo{
+	background-color: #18bc9c;
+	padding: 8px;
+	border: 1px solid #18bc9c;
+	font-size: 30px;
+	border-radius: 50%;
+	margin: 10px;
+}
+.nav-item{
+	display: inline-block;
+	padding: 10px;
+	margin: 10px;
+	font-size: 20px;
+}
+.active{
+	border-bottom: 3px solid #18bc9c;
+}
+#service-head-bar{
+	display: block;
+	clear: both;
+	background: #2c3e50; 
+	padding: 15px 0px;
+	color: #fff;
+}
+#service-well{
+	height: 800px;
+}
+#select-product{
+	width: 200px;
+	padding: 12px;
+	margin: 12px;
+}
+.input-group{
+	width: 50%;
+}
+.btn-margin{
+	margin-top: 15px;
+}
+.low-inventory{
+	color: #e44434;
+	-webkit-animation-delay: 0.5s;
+}
+#customerMoney{
+	width: 80px;
+}
+#totalPrice-style{
+	font-size: 20px;
+	padding: 5px 0px;
+	float: left;
+}
+#purchase-group{
+	float: right;
+}
+.message{
+	color: #e44434;
+}
+@media only screen and (max-width:637px){
+	#addStockInput{
+		width: 50px;
+	}
+}
+
+
+@media only screen and (max-width: 480px){
+	th, td{
+		font-size: 13px;
+	}
+	#input-addon{
+		padding: 0px 3px;
+	}
+	#customerMoney{
+		width: 60px;
+	}
+	#finalBuy{
+		font-size: 12px;
+		padding-top: 12.5px;
+		padding-bottom: 12.5px;
+		padding-right: 3px;
+		padding-left: 3px;
+	}
+	#input-addon, #customerMoney, #product-select, #amountToSell, #transactionDiv{
+		font-size: 12px;
+	}
+	#totalPrice-style{
+		font-size: 18px;
+	}
+}

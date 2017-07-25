@@ -1,0 +1,36 @@
+<div id="signUp-body">
+	
+	<div class="container">
+		{{!-- Page Header --}}
+		<h2>Sign Up <span class="fa fa-sign-in"></span></h2>
+		<form action="/signUp" method="POST">
+		{{!-- First and Last name Input --}}
+		<div class="form-group">
+			<label class="control-label" for="name">First and Last Name *</label>
+			<input type="text" class="form-control animated bounceInLeft" id="name">
+		</div>
+		{{!-- Username input --}}
+		<div class="form-group">
+			<label class="control-label" for="userNameSign">Username *</label>
+			<input type="text" class="form-control animated bounceInRight" id="userNameSign">
+			<h4 class="message" id="userNameSignMessage"></h4>
+		</div>
+		{{!-- Password input --}}
+		<div class="form-group">
+			<label class="control-label" for="passwordSign">Password *</label>
+			<input type="password" class="form-control animated bounceInLeft" id="passwordSign">
+		</div>
+		{{!-- Confirm Password input --}}
+		<div class="form-group">
+			<label class="control-label" for="password-sign">Confirm Password *</label>
+			<input type="password" class="form-control animated bounceInRight" id="passwordConfirm">
+			<h4 class="message" id="confirmPasswordMessage"></h4>
+		</div>
+		{{!-- signup button --}}
+		<button type="submit" id="signUpBtn" class="btn btn-success animated bounceInLeft">SIGN UP</button>
+		</form>
+		{{!-- Link to login page --}}
+		<h3>Already Have an account?</h3><a href="/" id="login-link">Login</a>
+	</div>
+</div>
+

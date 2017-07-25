@@ -1,0 +1,39 @@
+<div id="login-body">
+	<div class="container">
+		{{!-- Page Header --}}
+		<div id="login-top-head">
+			<h1 id="login-top-title" class="text-center animated bounceInDown">INVENTORY MANAGER <span id="home-logo" class="animated bounceInLeft fa fa-folder-open-o"></span></h1>
+			<h2 class="text-center">Manage With Ease</h2>
+		</div>
+		{{!-- End of Page Header --}}
+		{{!-- Login Panel --}}
+		<div class="panel panel-info animated bounceInUp" id="login-panel">
+			<div class="panel-heading">
+				<div class="panel-title">
+					<h2>LOGIN <span class="fa fa-user"></span></h2>
+				</div>
+			</div>
+			<div class="panel-body">
+				<h4 id="loginMessage" class="message"></h4>
+				<form action="/" method="POST">
+				{{!-- Username and Password input fields --}}
+					<div class="form-group">
+						<label class="control-label" for="userName">Username</label>
+						<input type="text" class="form-control" id="userName">
+					</div>
+
+					<div class="form-group">
+						<label class="control-label" for="password">Password</label>
+						<input type="password" class="form-control" id="password">
+					</div>
+
+					<button type="submit" id="loginBtn" class="btn btn-success">Login</button>
+
+				</form>
+				{{!-- Link to go create an account --}}
+				<a href="/signUp" id="signUp-link">Sign Up for an Account</a>
+			</div>
+		</div>
+		{{!-- End of Login Panel --}}
+	</div>
+</div>
